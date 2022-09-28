@@ -18,7 +18,7 @@ The data is public available via Zenodo:
 .
 +-- R
 +-- data
-+-- data
++-- data_raw
 +-- output
 
 ```
