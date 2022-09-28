@@ -14,8 +14,15 @@ data_grippe <- read.csv("data_raw/Factory_Survey_Data.csv", sep=";") %>%
          Grippe1890 = as.factor(Grippe1890),
          Severeness = as.character(Severeness),
          Severeness= recode(Severeness,
-                            "3" = "2"))%>%
-  select(Sex,Age2,age_group, age_group25, Grippe, Reinfection, Reinfection_forte, Severeness, reinf_v1, vage1, reinf_v2,vage2, reinf_v3, vage3,reinf_y1919,vage_1919,
+                            "3" = "2"),
+         wave_summer = vage1,
+         wave_fall_winter = vage2+vage3,
+         wave_1919 = vage_1919,
+         reinf_summer = reinf_v1,
+         reinf_v2_v3 = reinf_v2 + reinf_v3,
+         reinf_fall_winter=reinf_v2_v3,
+         reinf_1919=reinf_y1919) %>%
+  select(Sex,Age2,age_group, age_group25, Grippe, Times_grippe,Reinfection, Reinfection_forte, Severeness, wave_summer, reinf_summer, wave_fall_winter, reinf_fall_winter,wave_1919,reinf_1919,
          Grippe1890)
 
 
