@@ -45,10 +45,8 @@ This folder contains the raw data for the analysis:
 
 ### `output` folder
 
-This folder contains the bootstrapping results of each outcome.
+This folder contains all outputs.
 
 ### `master.R` 
 
-This skript contains information of the used R packages, number of bootstrapping, set seed etc.. To run the function `bootsptrapping.R`, please run first `data.R`.
-
-
+This skript contains information of the used R packages, R scripts, plotting parameters etc, please run first ` load("data/data_grippe.RData")`.
