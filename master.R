@@ -4,7 +4,9 @@ library(arsenal)
 library(export)
 library(ggsci)
 library(cowplot)
-
+library(introdataviz)
+library(sf)
+library(tmap)
 
 # parameter plots
 
@@ -31,3 +33,9 @@ size_legend_text <- 20
 load("data/data_grippe.RData")
 
 # R scripts
+
+source("R/Table1.R")
+source("R/Table2.R")
+source("R/Figure1.R")
+source("R/Supplement_Figure4.R")
+source("R/Supplement_Figure5.R")
