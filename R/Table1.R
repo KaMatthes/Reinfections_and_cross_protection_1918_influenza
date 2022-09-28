@@ -12,7 +12,7 @@ data_grippe_wave1 <- data_grippe_yes %>%
   filter(wave_summer==1) 
 
 data_grippe_wave2 <- data_grippe_yes %>%
-  filter(wave_fall_winter==1) 
+  filter(wave_fall_winter>0) 
 
 data_grippe_wave3 <- data_grippe_yes %>%
   filter(wave_1919==1) 
