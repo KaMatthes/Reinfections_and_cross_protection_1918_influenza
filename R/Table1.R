@@ -24,6 +24,8 @@ tab_des <- summary(tab_age,text=TRUE)
 tab_des <- as.data.frame(tab_des)
 table2excel(tab_des, file = "output/Table_age.xlsx")
 
+t.test(Age2~Sex, data=data_grippe_age)
+
 #  Grippe
 tab_grippe <- tableby(Sex ~ age_group +Severeness+Reinfection, data=data_grippe_yes)
 summary(tab_grippe)
