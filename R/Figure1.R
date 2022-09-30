@@ -52,12 +52,12 @@ Mod_severness <- data.frame(summary(glm(Severeness ~ age_group, data = data_mod,
   add_row(Fac = "age_group>=40", Est =1, CIl=0, CIu=0) %>%
   filter(!Fac =="(Intercept)") %>%
   dplyr::select(Fac, Est, CIl,CIu) %>%
-  mutate(Var="Severeness")
+  mutate(Var="Severity")
 
 
 data_age <- rbind(Mod_illness,Mod_wave1,Mod_wave2,Mod_severness) %>%
     mutate(Fac=factor(Fac, levels=c("age_group<40","age_group>=40")),
-           Var=factor(Var, levels=c("Illness","1st wave", "2nd wave", "Severeness")))
+           Var=factor(Var, levels=c("Illness","1st wave", "2nd wave", "Severity")))
   
 OR_plot_age <- ggplot( data_age, aes(x=forcats::fct_rev(Var),y=Est),position=pd) + 
     geom_hline(yintercept=1, colour="grey", lwd=lwdline) + 
@@ -123,7 +123,7 @@ Mod_severness_sex<- data.frame(summary(glm(Severeness ~Sex, data = data_mod, fam
   add_row(Fac = "Sexmale", Est =1, CIl=0, CIu=0) %>%
   filter(!Fac =="(Intercept)") %>%
   dplyr::select(Fac, Est, CIl,CIu) %>%
-  mutate(Var="Severeness",
+  mutate(Var="Severity",
          Model="unadjusted")
 
 
@@ -170,13 +170,13 @@ Mod_severness_sex_ad <- data.frame(summary(glm(Severeness ~Sex + Age2, data = da
   add_row(Fac = "Sexmale", Est =1, CIl=0, CIu=0) %>%
   filter(!Fac =="(Intercept)") %>%
   dplyr::select(Fac, Est, CIl,CIu) %>%
-  mutate(Var="Severeness",
+  mutate(Var="Severity",
          Model="adjusted")
 
 data_sex <- rbind(Mod_illness_sex,Mod_wave1_sex,Mod_wave2_sex,Mod_severness_sex,
   Mod_illness_sex_ad,Mod_wave1_sex_ad,Mod_wave2_sex_ad,Mod_severness_sex_ad) %>%
   mutate(Fac=factor(Fac, levels=c("Sexmale","Sexfemale")),
-         Var=factor(Var, levels=c("Illness","1st wave", "2nd wave", "Severeness")),
+         Var=factor(Var, levels=c("Illness","1st wave", "2nd wave", "Severity")),
          Model=factor(Model,levels=c("unadjusted","adjusted")))
 
 OR_plot_sex <- ggplot( data_sex, aes(x=forcats::fct_rev(Var),y=Est),position=pd) + 
