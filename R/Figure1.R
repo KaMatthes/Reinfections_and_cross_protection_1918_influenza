@@ -64,6 +64,7 @@ OR_plot_age <- ggplot( data_age, aes(x=forcats::fct_rev(Var),y=Est),position=pd)
     geom_pointrange(aes(ymin=CIl, ymax=CIu,col=Fac),lwd=lwd_size,position=pd,fatten=fatten_size)+
     # ylim(c(0,2.5))+
     labs(x="",y="OR") +
+  guides(color = guide_legend(override.aes = list(size = 1.5)))+
     # ggtitle("OR")+
     scale_color_manual(" ",
                        breaks=c("age_group>=40","age_group<40"),
@@ -187,6 +188,7 @@ OR_plot_sex <- ggplot( data_sex, aes(x=forcats::fct_rev(Var),y=Est),position=pd)
   facet_grid(~Model) +
   # ylim(c(0,2.5))+
   labs(x="",y="OR") +
+  guides(color = guide_legend(override.aes = list(size = 1.5)))+
   # ggtitle("OR")+
   scale_color_manual(" ",
                      breaks=c("Sexmale","Sexfemale"),
