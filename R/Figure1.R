@@ -158,6 +158,7 @@ Mod_wave2_sex_ad <- data.frame(summary(glm(Wave2 ~Sex + Age2, data = data_mod, f
          Fac = row.names(.)) %>%
   add_row(Fac = "Sexmale", Est =1, CIl=0, CIu=0) %>%
   filter(!Fac =="(Intercept)") %>%
+  filter(!Fac =="Age2")%>%
   dplyr::select(Fac, Est, CIl,CIu) %>%
   mutate(Var="2nd wave",
          Model="adjusted")
@@ -169,6 +170,7 @@ Mod_severness_sex_ad <- data.frame(summary(glm(Severeness ~Sex + Age2, data = da
          Fac = row.names(.)) %>%
   add_row(Fac = "Sexmale", Est =1, CIl=0, CIu=0) %>%
   filter(!Fac =="(Intercept)") %>%
+  filter(!Fac =="Age2")%>%
   dplyr::select(Fac, Est, CIl,CIu) %>%
   mutate(Var="Severity",
          Model="adjusted")
