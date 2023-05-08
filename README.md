@@ -2,7 +2,7 @@
 
 ## Paper
 <br >
-Mattthes KL*, Le Vu M*, Bhattacharyya U, Galliker A, Kordi M, Floris J, Staub K (2023) Reinfections and Cross-Protection in the 1918/19 Influenza Pandemic: Revisiting a Survey Among Male and Female Factory Workers. *International Journal of Public Health*. https://doi.org/10.3389/ijph.2023.1605777
+Mattthes KL*, Le Vu M*, Bhattacharyya U, Galliker A, Kordi M, Floris J, Staub K (2023) Reinfections and Cross-Protection in the 1918/19 Influenza Pandemic: Revisiting a Survey Among Male and Female Factory Workers. <i>International Journal of Public Health<i>. https://doi.org/10.3389/ijph.2023.1605777
 <br >
 <sub>* Equal contribution.</sub>
 
